@@ -1,0 +1,47 @@
+// Typography
+// -------------------------
+$fontSize: 16;
+$baseLineHeight: 1.25 !default;
+
+$sans:                      sans-serif !default;
+$serif:                     serif !default;
+
+$thin:                      100 !default;
+$light:                     300 !default;
+$regular:                   400 !default;
+$medium:                    500 !default;
+$bold:                      700 !default;
+$ultraBold:                 800 !default;
+
+$fontFamily: Nunito;
+$fallBachFont: sans-serif;
+
+// Radius
+// -------------------------
+$radiusS: 4px;
+$radiusM: 10px;
+$radiusL: 80px;
+
+// Project colors
+// -------------------------
+$primaryColor: #F4E041;
+$secondaryColor: #00BDD3;
+$backgroundColor: #f8f8f8;
+$hoverColor: #FFE302;
+$disabledColor: #B4B4B4;
+$errorColor: #CB3D40;
+$darkColor: rgba(0, 0, 0, 0.87);
+$grayColor: #7e7e7e;
+$lightGrayColor: #d0cfcf;
+$lightColor: rgba(255, 255, 255, 0.87);
+
+// Breakpoints
+// -------------------------
+$breakPointL: 2560px;
+$breakPointM: 1024px;
+$breakPointS: 768px;
+$breakPointXS: 360px;
+
+// Animation
+// -------------------------
+$transition: 0.3s ease;

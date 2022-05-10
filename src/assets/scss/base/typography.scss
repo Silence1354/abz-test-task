@@ -1,0 +1,51 @@
+@use 'sass:math';
+
+@mixin typography($name, $typography) {
+  $styles: map-get($typography, $name);
+
+  font-weight: map-get($styles, font-weight);
+  font-size: map-get($styles, font-size) + px;
+  font-family: map-get($styles, font-family);
+  line-height: math.div(map-get($styles, line-height), map-get($styles, font-size));
+  letter-spacing: #{map-get($styles, letter-spacing)};
+  text-transform: map_get($styles, text-transform);
+}
+
+$typography: (
+  H-1: (
+    font-size: 40,
+    font-weight: 400,
+    letter-spacing: 0,
+    line-height: 40,
+  ),
+  BODY-16: (
+    font-size: 16,
+    font-weight: 400,
+    letter-spacing: 0,
+    line-height: 26,
+  ),
+  BODY-12: (
+    font-size: 12,
+    font-weight: 400,
+    letter-spacing: 0,
+    line-height: 14,
+  ),
+);
+
+@each $label, $map in $typography {
+  .#{$label} {
+    @include typography($label, $typography);
+  }
+}
+
+@mixin H-1 {
+  @include typography('H-1', $typography);
+}
+
+@mixin BODY-16 {
+  @include typography('BODY-16', $typography);
+}
+
+@mixin BODY-12 {
+  @include typography('BODY-12', $typography);
+}

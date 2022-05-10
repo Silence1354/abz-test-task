@@ -1,0 +1,29 @@
+.c-button {
+  background-color: $primaryColor;
+  border-radius: $radiusL;
+  padding: 0 23px;
+  min-height: 34px;
+  transition: $transition;
+  cursor: pointer;
+  $parent: &;
+
+  &--disabled {
+    pointer-events: none;
+    background-color: $disabledColor;
+
+    #{$parent} {
+      &__text {
+        color: $lightColor;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: $hoverColor;
+  }
+
+  &__text {
+    @include BODY-16;
+    color: $darkColor;
+  }
+}

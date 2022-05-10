@@ -1,0 +1,60 @@
+.c-upload {
+  position: relative;
+  background-color: $backgroundColor;
+  display: flex;
+  align-items: center;
+  border: 1px solid $lightGrayColor;
+  border-radius: $radiusS;
+  width: 384px;
+  margin-top: 20px;
+  margin-left: 20px;
+
+  &--error {
+    border-color: $errorColor;
+    border-width: 2px;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    width: 83px;
+    border: 1px solid $darkColor;
+    border-radius: $radiusS 0 0 $radiusS;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &--error {
+      border-color: $errorColor;
+      border-width: 0 2px 0 0;
+    }
+  }
+
+  &__placeholder {
+    padding: 0 16px;
+    color: $grayColor;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--dark {
+      color: $darkColor;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: -24px;
+    left: 16px;
+  }
+
+  &__error-text {
+    color: $errorColor;
+    @include BODY-12;
+  }
+}

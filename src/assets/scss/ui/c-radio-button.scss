@@ -1,0 +1,45 @@
+.c-radio-button {
+  display: flex;
+  align-items: center;
+  $parent: &;
+
+  &__fake-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    border: 1px solid $lightGrayColor;
+    border-radius: 50%;
+
+    &:after {
+      display: block;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      background-color: $secondaryColor;
+      content: "";
+      visibility: hidden;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked {
+      & + #{$parent} {
+        &__fake-input {
+          &:after {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  &__value {
+    @include BODY-16;
+    color: $darkColor;
+  }
+}

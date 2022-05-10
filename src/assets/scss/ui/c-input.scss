@@ -1,0 +1,69 @@
+.c-input {
+  background-color: $backgroundColor;
+  border: 1px solid $lightGrayColor;
+  border-radius: $radiusS;
+  position: relative;
+  display: block;
+  height: 54px;
+  width: 384px;
+  margin: 20px;
+  $parent: &;
+
+  &--error {
+    border-color: $errorColor;
+  }
+
+  &__input {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    @include BODY-16;
+  }
+
+  &__placeholder  {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    color: $grayColor;
+    @include BODY-16;
+    padding: 0 4px;
+    background-color: $backgroundColor;
+    transition: $transition;
+    transform-origin: left;
+    max-width: calc(100% - 32px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--error {
+      color: $errorColor;
+    }
+
+    &--focused {
+      top: -4px;
+      transform: scale(0.75) translateY(-50%);
+    }
+  }
+
+  &__helper {
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    left: 16px;
+    @include BODY-12;
+    color: $grayColor;
+    max-width: calc(100% - 32px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--error {
+      color: $errorColor;
+    }
+  }
+}
